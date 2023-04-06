@@ -105,9 +105,7 @@ print("binary equivalent: ", b)
 
 ############################################################
 
-#main program
-print("welcome to MATH314 project! chose what operation you want to do(enter number):")
-print("1-binary addtion\n2-binary multiplicatin")
+
 #main program
 print("welcome to MATH314 project!")
 x = "y"
