@@ -76,13 +76,13 @@ def expansion1(n,base):
        # k += 1
     return m.reverse()          #reverse to correct the order of the result.
                                 #ask user to enter
-print("Please enter a number in decimal :")
-n=int(input())
-print("Please enter the base: ")
-b=int(input())
+#print("Please enter a number in decimal :")
+#n=int(input())
+#print("Please enter the base: ")
+#b=int(input())
 
-expansion1(n,b)
-print(n,'base 2 =',' '.join(str(n) for n in m),'base',b)    # print as a string 
+#expansion1(n,b)
+#print('(',n,')2 equivalent to (',''.join(str(n) for n in m),')',b)
 
 ##here to convert from binary,octal or hexadecimal to decimal .
 
@@ -110,7 +110,7 @@ print("binary equivalent: ", b)
 print("welcome to MATH314 project!")
 x = "y"
 while(x == "y"):
-    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin")
+    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number")
     o = input()
     if o == "1":
         print("enter first binary number:")
@@ -124,6 +124,14 @@ while(x == "y"):
         print("enter second binary number:")
         b = input()
         print("the result is: \n", mult_Binary(a, b))
+    elif o == "3":
+      print("Please enter a number in decimal :")
+      n=int(input())
+      print("Please enter the base: ")
+      b=int(input())
+      expansion1(n,b)
+      print('(',n,')2 equivalent to (',''.join(str(n) for n in m),')',b)
+
 
     print("want to do another operation? y/n")
     x = input()
