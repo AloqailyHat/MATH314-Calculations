@@ -72,17 +72,26 @@ def add_binary(a,b):
 #main program
 print("welcome to MATH314 project! chose what operation you want to do(enter number):")
 print("1-binary addtion\n2-binary multiplicatin")
-o = input()
+#main program
+print("welcome to MATH314 project!")
+x = "y"
+while(x == "y"):
+    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin")
+    o = input()
+    if o == "1":
+        print("enter first binary number:")
+        a = input()
+        print("enter second binary number:")
+        b = input()
+        print("the result is: \n", add_binary(a, b))
+    elif o == "2":
+        print("enter first binary number:")
+        a = input()
+        print("enter second binary number:")
+        b = input()
+        print("the result is: \n", mult_Binary(a, b))
 
-if o == "1":
-    print("enter first binary number:")
-    a = input()
-    print("enter second binary number:")
-    b = input()
-    print("the result is: \n",add_binary(a,b))
-elif o == "2":
-    print("enter first binary number:")
-    a = input()
-    print("enter second binary number:")
-    b = input()
-    print("the result is: \n",mult_Binary(a,b))
+    print("want to do another operation? y/n")
+    x = input()
+    
+print("thank you")
