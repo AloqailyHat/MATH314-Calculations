@@ -94,15 +94,13 @@ print("binary equivalent: ", b)
 
 ############################################################
 
-# function for ....
-
-
-
-
-
-
-
-
+# function for Euclidean Algorithm (Greatest Common Divisor)
+def gcd(a,b):
+    if a == 0:
+        return b
+    if b == 0:
+        return a
+    return gcd(b, a%b)
 ############################################################
 
 
@@ -110,7 +108,7 @@ print("binary equivalent: ", b)
 print("welcome to MATH314 project!")
 x = "y"
 while(x == "y"):
-    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number")
+    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number\n4-calculate GCD")
     o = input()
     if o == "1":
         print("enter first binary number:")
@@ -131,6 +129,10 @@ while(x == "y"):
       b=int(input())
       expansion1(n,b)
       print('(',n,')2 equivalent to (',''.join(str(n) for n in m),')',b)
+    elif o == "4":
+      a=int(input("Enter 1st Value: "))
+      b=int(input("Enter 2nd Value: ")) 
+      print ("GCD of {} and {} is {}".format(a, b, gcd(a,b)))
 
 
     print("want to do another operation? y/n")
