@@ -69,7 +69,20 @@ def add_binary(a,b):
 
 ############################################################
 
-num1 = "1101"  # we can use the str built in function if we are gonna take input from the user 
-num2 = "101"
-result = mult_Binary(num1, num2)
-print(result)
+#main program
+print("welcome to MATH314 project! chose what operation you want to do(enter number):")
+print("1-binary addtion\n2-binary multiplicatin")
+o = input()
+
+if o == "1":
+    print("enter first binary number:")
+    a = input()
+    print("enter second binary number:")
+    b = input()
+    print("the result is: \n",add_binary(a,b))
+elif o == "2":
+    print("enter first binary number:")
+    a = input()
+    print("enter second binary number:")
+    b = input()
+    print("the result is: \n",mult_Binary(a,b))
