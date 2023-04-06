@@ -108,7 +108,7 @@ def gcd(a,b):
 print("welcome to MATH314 project!")
 x = "y"
 while(x == "y"):
-    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number\n4-calculate GCD")
+    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number\n4-calculate GCD (Euclidean algorithm)")
     o = input()
     if o == "1":
         print("enter first binary number:")
