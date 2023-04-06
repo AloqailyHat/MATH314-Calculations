@@ -45,13 +45,49 @@ def add_binary(a,b):
 
 ###########################################################
 
-# function for .....
+# function for converting a number from deciaml to binary, octal or hexadecimal.
 
+m=[]                                #a list to hold the result
+def expansion1(n,base):
+    q = n
+   # k = 0
+    if base==16:                    #in case of hexadecimal.
+     while q != 0:
+        o=q % b
+        if o==10:
+          m.append('A')
+        elif o==11:
+          m.append('B')
+        elif o==12:
+          m.append('C')
+        elif o==13:
+          m.append('D')
+        elif o==14:
+          m.append('E')
+        elif o==15:
+          m.append('F')
+        else:
+          m.append(o)
+        q = int(q / base)
+    else:                       #the two other cases.
+      while q != 0:
+        m.append(q % base)
+        q = int(q / base)
+       # k += 1
+    return m.reverse()          #reverse to correct the order of the result.
+                                #ask user to enter
+print("Please enter a number in decimal :")
+n=int(input())
+print("Please enter the base: ")
+b=int(input())
 
+expansion1(n,b)
+print(n,'base 2 =',' '.join(str(n) for n in m),'base',b)    # print as a string 
 
+##here to convert from binary,octal or hexadecimal to decimal .
 
-
-
+b = int(input("Enter a binary number: "), 2)  #2 is the base.
+print("binary equivalent: ", b)
 
 
 
