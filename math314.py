@@ -1,9 +1,3 @@
-def nn(n,b,m):
-    d = pow(b, n) % m
-    return (d)
-
-
-
 
 
 # -*- coding: utf-8 -*-
