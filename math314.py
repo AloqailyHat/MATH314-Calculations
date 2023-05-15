@@ -1,3 +1,11 @@
+def nn(n,b,m):
+    d = pow(b, n) % m
+    return (d)
+
+
+
+
+
 # -*- coding: utf-8 -*-
 """MATH314.ipynb
 
@@ -75,20 +83,12 @@ def expansion1(n,base):
         q = int(q / base)
        # k += 1
     return m.reverse()          #reverse to correct the order of the result.
-                                #ask user to enter
-#print("Please enter a number in decimal :")
-#n=int(input())
-#print("Please enter the base: ")
-#b=int(input())
-
-#expansion1(n,b)
-#print('(',n,')2 equivalent to (',''.join(str(n) for n in m),')',b)
 
 ##here to convert from binary,octal or hexadecimal to decimal .
-
+"""
 b = int(input("Enter a binary number: "), 2)  #2 is the base.
 print("binary equivalent: ", b)
-
+"""
 
 
 
@@ -102,13 +102,28 @@ def gcd(a,b):
         return a
     return gcd(b, a%b)
 ############################################################
-
+# binary mod expo function
+def nn(n,b,m):
+    d = pow(b, n) % m
+    return (d)
+##second method but doesnt work some logical issue may be the x shouldnt be one (one for any power gives one )
+def nn(n,b,m):##power in binary form
+    x=1
+    k=len(str(n))
+    p=b%m
+    a = [int(c) for c in str(n)]
+    for i in range(0,k,1):
+      if a[i] ==1:
+         x=(x**p)%m
+         p=(p**p)%m
+    print(x)
+###################################################3
 
 #main program
 print("welcome to MATH314 project!")
 x = "y"
 while(x == "y"):
-    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number\n4-calculate GCD (Euclidean algorithm)")
+    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number\n4-calculate GCD (Euclidean algorithm)\n5-calculate modular exponentiation")
     o = input()
     if o == "1":
         print("enter first binary number:")
@@ -133,6 +148,15 @@ while(x == "y"):
       a=int(input("Enter 1st Value: "))
       b=int(input("Enter 2nd Value: ")) 
       print ("GCD of {} and {} is {}".format(a, b, gcd(a,b)))
+    elif o == "5":
+        print("Please enter the power :")
+        n=int(input())
+        print("Please enter the base: ")
+        b=int(input())
+        print("Please enter the mod: ")
+        mod=int(input())
+        print(b,"power",n,"mod",mod," = ",nn(n,b,mod))
+        
 
 
     print("want to do another operation? y/n")
