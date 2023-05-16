@@ -97,11 +97,12 @@ def gcd(a,b):
     return gcd(b, a%b)
 ############################################################
 # binary mod expo function
-def nn(n,b,m):
+def BME(n,b,m):
     d = pow(b, n) % m
     return (d)
 ##second method but doesnt work some logical issue may be the x shouldnt be one (one for any power gives one )
-def nn(n,b,m):##power in binary form
+"""
+def BME(n,b,m):##power in binary form
     x=1
     k=len(str(n))
     p=b%m
@@ -111,13 +112,26 @@ def nn(n,b,m):##power in binary form
          x=(x**p)%m
          p=(p**p)%m
     print(x)
+    """
+##third one the best 
+def Binary_Modular_exp(b, e, m):
+    ee="0b"+str(e)
+    BE=int(ee, 2)
+    r = 1
+    if 1 & BE:
+        r = b
+    while BE:
+        BE >>= 1
+        b = (b * b) % m
+        if BE & 1: r = (r * b) % m
+    return r
 ###################################################3
 
 #main program
 print("welcome to MATH314 project!")
 x = "y"
 while(x == "y"):
-    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number\n4-calculate GCD (Euclidean algorithm)\n5-calculate modular exponentiation")
+    print("chose what operation you want to do(enter number):\n1-binary addtion\n2-binary multiplicatin\n3-converting a decimal number\n4-calculate GCD (Euclidean algorithm)\n5-calculate the Binary modular exponentiation")
     o = input()
     if o == "1":
         print("enter first binary number:")
@@ -143,13 +157,13 @@ while(x == "y"):
       b=int(input("Enter 2nd Value: ")) 
       print ("GCD of {} and {} is {}".format(a, b, gcd(a,b)))
     elif o == "5":
-        print("Please enter the power :")
-        n=int(input())
+        print("Please enter the power in bianry form :")
+        e=int(input())
         print("Please enter the base: ")
         b=int(input())
         print("Please enter the mod: ")
-        mod=int(input())
-        print(b,"power",n,"mod",mod," = ",nn(n,b,mod))
+        m=int(input())
+        print(b,"^",e,"( mod",m,")"," = ",Binary_Modular_exp(b, e, m))
         
 
 
